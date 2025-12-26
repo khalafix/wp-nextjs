@@ -7,10 +7,12 @@ export async function getPosts() {
 }
 
 export async function getPostBySlug(slug: string) {
+  //console.log(slug);
   const encodedSlug = encodeURIComponent(slug) // مهم
   const res = await fetch(`https://asfaronline.com/wp-json/wp/v2/posts?slug=${encodedSlug}&_embed`, { cache: 'no-store' })
   if (!res.ok) throw new Error('Failed to fetch post')
   const data = await res.json()
+//console.log(data);
   return data[0] || null
 }
 

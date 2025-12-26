@@ -1,6 +1,7 @@
 import { getPosts } from './lib'
 import Link from 'next/link'
 
+
 export default async function BlogPage() {
   const posts = await getPosts()
 
